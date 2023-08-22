@@ -9,7 +9,7 @@
 }
 
 section{
-    padding-bottom: 50px;
+    /* padding-bottom: 50px; */
     border: 1px solid lightgray;
     border-radius: 5px;
     padding-top: 0px;
@@ -20,5 +20,4 @@ section{
 
 span{
     padding-left: 10px;
-   
 }
