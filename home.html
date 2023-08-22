@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jquery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/jquery.png">
+</head>
+
+<body>
+    <div class="container-fluid ps-5">
+        <div class="row mt-3 text-center">
+            <div class="col-1">
+                <button type="button" class="btn btn-primary" id="headingTextModel" data-bs-toggle="modal" data-bs-target="#headingModal">
+                    Heading
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" id="SubSeadingId" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#subHeadingModal">
+                    Sub Heading
+                </button>
+            </div>
+            <div class="col-1">
+                <button type="button" id="formModelId" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#formModal">
+                    Form
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Heading Section -->
+    <div class="modal fade" id="headingModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Heading</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" class="select-heading">
+                    <div class="modal-body">
+                        <input type="text" class="form-control" placeholder="Please Enter Heading" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sub Heading Section -->
+    <div class="modal fade" id="subHeadingModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sub Heading</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" class="select-sub-heading">
+                    <div class="modal-body">
+                        <select class="form-select mt-3" aria-label="Default select example">
+                            <option value="heading" selected disabled>Please Select Heading</option>
+                        </select>
+                        <input type="text" class="form-control mt-3" placeholder="Please Enter Sub Heading" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary smtbtn" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <div class="modal fade" id="formModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="" class="select-form" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <select class="formheading form-select" id="headings" name="formheading"
+                            aria-label="Default select example">
+                            <option value="">Select Heading</option>
+                        </select><br>
+
+                        <select class="subheadingform mt-3 form-select" id="sectionTagId"
+                            aria-label="Default select example">
+                            <option value="subheading" selected disabled>Select Sub Heading</option>
+                        </select>
+                        <select id="controlType" class="select-input form-select mt-3"
+                            aria-label="Default select example">
+                            <option value="" selected disabled>Select Input Type</option>
+                            <option>button</option>
+                            <option>checkbox</option>
+                            <option>color</option>
+                            <option>date</option>
+                            <option>datetime-local</option>
+                            <option>email</option>
+                            <option>file</option>
+                            <option>radio</option>
+                            <option>range</option>
+                            <option>number</option>
+                            <option>password</option>
+                            <option>radio</option>
+                        </select>
+                        <input type="text" name="" id="Labels" placeholder="Label" class="form-control labels mt-3"
+                            required>
+                        <input type="text" name="" id="Classes" placeholder="Class" class="form-control classes mt-3">
+                        <input type="text" name="" id="Ids" placeholder="Id" class="form-control ids mt-3">
+                        <input type="text" name="" id="Placeholders" placeholder="Placeholder"
+                            class="form-control placeholders mt-3">
+                        <input type="text" name="" id="Values" placeholder="Value" class="form-control values mt-3">
+                        <input type="text" name="" id="Names" placeholder="Name" class="form-control names mt-3">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-3">
+        <div class="row" id="rowid">
+            <div class="col-lg-7 ms-4">
+                <main id="mainContainer">
+                    
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

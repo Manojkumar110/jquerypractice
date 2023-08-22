@@ -1,0 +1,24 @@
+.remove{
+    font-size: 14px;
+}
+
+.subheadingtxt{
+    padding: 5px 0px;
+    border-radius: 10px;
+   
+}
+
+section{
+    padding-bottom: 50px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px;
+}
+
+span{
+    padding-left: 10px;
+   
+}
