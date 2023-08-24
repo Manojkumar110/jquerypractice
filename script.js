@@ -248,8 +248,20 @@ $(function () {
         connectWith: 'section > div',
         items:'div',
         dropOnEmpty: true,
-        cancel: 'h1, button',
+        cancel: 'h1, button div .forminputs',
+
     });
+    // $('.subheads-list').sortable({
+    //     change: function (event, ui) { setLocalStorage() },
+    //     update: function (event, ui) { setLocalStorage() },
+    //     items:'> .container ',
+    // });
+
+    // $('.subheads-list .container form.ui-sortable').sortable({
+    //     change: function (event, ui) { setLocalStorage() },
+    //     update: function (event, ui) { setLocalStorage() },
+    //     items:'> .forminputs ',
+    // });
 
     // $('.container').sortable({
     //     change: function (event, ui) { setLocalStorage() },

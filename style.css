@@ -21,6 +21,45 @@ section{
 span{
     padding-left: 10px;
 }
+
+
+.container{
+    padding-bottom: 30px;
+    
+}
+.container form{
+    /* min-height: 200px; */
+    width: 100%;
+    
+}
+
 .subheads-list{
     min-height: 40px;
+}
+
+
+main{
+    border: 1px solid red;
+}
+
+section {
+    border: 1px solid yellow;
+}
+
+.subheads-list{
+    border: 1px solid orange;
+}
+
+.container {
+    border: 1px solid green;
+}
+
+form{
+    border: 1px solid grey;
+    min-height: 40px;
+    /* padding: 1%; */
+}
+
+form .forminputs{
+    padding: 1%;
 }
