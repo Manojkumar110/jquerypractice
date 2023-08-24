@@ -2,7 +2,7 @@
 $(document).ready(function () {
     var heading = getLocalStorage("Heading");
     if (heading) {
-        $("#mainContainer").append(heading);
+        $("main").append(heading);
     }
     $(':input[type="submit"]').prop('disabled', true);
     $('input[type="text"]').keyup(function () {
@@ -120,7 +120,7 @@ $("#formModelId").click(function () {
                 .text(itemData));
         });
     })
-
+    setLocalStorage();
 });
 
 $(document).ready(function () {
@@ -167,6 +167,7 @@ $(document).ready(function () {
         e.preventDefault();
         e.target.reset();
     })
+    setLocalStorage();
 });
 
 // form section end here :- 
@@ -223,7 +224,7 @@ $('.select-input').on("change", function () {
 
 // local storage start here :-
 function setLocalStorage() {
-    var selectValue = $('#mainContainer').html();
+    var selectValue = $('main').html();
     localStorage.setItem("Heading", selectValue);
 };
 
@@ -235,33 +236,33 @@ function getLocalStorage(property) {
 
 // dragdrop start here :-
 $(function () {
-    $('#mainContainer').sortable({
+    $('main').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        connectWith: '#mainContainer',
+        items:'> section',
     });
 
-    $('section').sortable({
+    $('section div:first-of-type').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        connectWith: 'section',
-        cancel: 'h1',
-    })
-
-    $('.subheads-list').sortable({
-        change: function (event, ui) { setLocalStorage() },
-        update: function (event, ui) { setLocalStorage() },
-        connectWith: '.subheads-list',
-        cancel: 'h1',
+        connectWith: 'section > div',
+        items:'div',
+        dropOnEmpty: true,
+        cancel: 'h1, button',
     });
 
-    // $(".container").sortable({
+    // $('.container').sortable({
     //     change: function (event, ui) { setLocalStorage() },
     //     update: function (event, ui) { setLocalStorage() },
     //     connectWith: '.container',
+    //     items:'div .forminputs',
+    //     dropOnEmpty: false,
+    //     cancel: 'h1, button',
     // });
+    
     setLocalStorage();
 })
+
 
 // drag and drop end here:-
 function removeFun(remove) {
@@ -281,9 +282,9 @@ function removed(remove) {
 
 }
 
-// $(".smtbtn").click(function () {
-//     location.reload();
-// });
+$(".smtbtn").click(function () {
+    // location.reload();
+});
 
 function resSet() {
     $('.placeholders').attr('readonly', false);
