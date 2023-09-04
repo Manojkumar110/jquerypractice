@@ -28,7 +28,7 @@ span{
     
 }
 .container form{
-    /* min-height: 200px; */
+    min-height: 50px;
     width: 100%;
     
 }
@@ -39,23 +39,23 @@ span{
 
 
 main{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 section {
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
 }
 
 .subheads-list{
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 
 .container {
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
 
 form{
-    border: 1px solid grey;
+    /* border: 1px solid grey; */
     min-height: 40px;
     /* padding: 1%; */
 }

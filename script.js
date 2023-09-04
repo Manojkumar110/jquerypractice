@@ -251,26 +251,26 @@ $(function () {
         cancel: 'h1, button div .forminputs',
 
     });
-    // $('.subheads-list').sortable({
-    //     change: function (event, ui) { setLocalStorage() },
-    //     update: function (event, ui) { setLocalStorage() },
-    //     items:'> .container ',
-    // });
+    $('.subheads-list').sortable({
+        change: function (event, ui) { setLocalStorage() },
+        update: function (event, ui) { setLocalStorage() },
+        items:'> .container ',
+    });
 
-    // $('.subheads-list .container form.ui-sortable').sortable({
-    //     change: function (event, ui) { setLocalStorage() },
-    //     update: function (event, ui) { setLocalStorage() },
-    //     items:'> .forminputs ',
-    // });
+    $('.subheads-list .container form.ui-sortable').sortable({
+        change: function (event, ui) { setLocalStorage() },
+        update: function (event, ui) { setLocalStorage() },
+        items:'> .forminputs ',
+    });
 
-    // $('.container').sortable({
-    //     change: function (event, ui) { setLocalStorage() },
-    //     update: function (event, ui) { setLocalStorage() },
-    //     connectWith: '.container',
-    //     items:'div .forminputs',
-    //     dropOnEmpty: false,
-    //     cancel: 'h1, button',
-    // });
+    $('.container').sortable({
+        change: function (event, ui) { setLocalStorage() },
+        update: function (event, ui) { setLocalStorage() },
+        connectWith: '.container',
+        items:'div .forminputs',
+        dropOnEmpty: false,
+        cancel: 'h1, button',
+    });
     
     setLocalStorage();
 })
