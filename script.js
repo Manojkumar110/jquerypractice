@@ -239,38 +239,26 @@ $(function () {
     $('main').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        items:'> section',
+        items:'> section ',
     });
 
     $('section div:first-of-type').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        connectWith: 'section > div',
+        connectWith: 'section > div ',
         items:'div',
         dropOnEmpty: true,
-        cancel: 'h1, button div .forminputs',
-
-    });
-    $('.subheads-list').sortable({
-        change: function (event, ui) { setLocalStorage() },
-        update: function (event, ui) { setLocalStorage() },
-        items:'> .container ',
+        cancel: 'h1, button div .forminputs ',
     });
 
-    $('.subheads-list .container form.ui-sortable').sortable({
+    $('.subheads-list .container form').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        items:'> .forminputs ',
+        connectWith: 'section > div > div > form',
+        items:'.forminputs ',
+        dropOnEmpty: true,
     });
 
-    $('.container').sortable({
-        change: function (event, ui) { setLocalStorage() },
-        update: function (event, ui) { setLocalStorage() },
-        connectWith: '.container',
-        items:'div .forminputs',
-        dropOnEmpty: false,
-        cancel: 'h1, button',
-    });
     
     setLocalStorage();
 })
