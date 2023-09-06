@@ -245,10 +245,16 @@ $(function () {
     $('section div:first-of-type').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
-        connectWith: 'section > div ',
+        connectWith: 'section > div',
         items:'div',
         dropOnEmpty: true,
         cancel: 'h1, button div .forminputs ',
+    });
+
+    $('.subheads-list').sortable({
+        change: function (event, ui) { setLocalStorage() },
+        update: function (event, ui) { setLocalStorage() },
+        items:'> .container ',
     });
 
     $('.subheads-list .container form').sortable({
@@ -257,6 +263,15 @@ $(function () {
         connectWith: 'section > div > div > form',
         items:'.forminputs ',
         dropOnEmpty: true,
+    });
+
+    $('.container').sortable({
+        change: function (event, ui) { setLocalStorage() },
+        update: function (event, ui) { setLocalStorage() },
+        connectWith: '.container',
+        items:'.forminputs',
+        dropOnEmpty: false,
+        cancel: 'h1, button ',
     });
 
     
