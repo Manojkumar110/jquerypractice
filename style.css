@@ -47,11 +47,11 @@ section {
 }
 
 .subheads-list{
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
 }
 
 .container {
-    /* border: 1px solid green; */
+    border: 1px solid green;
 }
 
 form {

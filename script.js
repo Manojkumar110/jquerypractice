@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     $(".select-heading").on('submit', function (e) {
         var heading = $('input').val()
-        $("main").append('<section><h1>' + heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h1><div class="subheads-list"></div></section>')
+        $("main").append('<section class="ui-sortable-handle"><h1>' + heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h1><div class="subheads-list ui-sortable"></div></section>')
         $('.select-sub-heading option').remove()
         $('.select-sub-heading select').append("<option value='' selected disabled>Please Select Heading</option>")
         $('.select-form #headings option').remove()
@@ -69,7 +69,7 @@ $(document).ready(function () {
     $(".select-sub-heading").on('submit', function (e) {
         var heading_in_sub_heading = $('select option:selected', this).val()
         var sub_heading = $('input', this).val()
-        $("section:nth-child(" + heading_in_sub_heading + ") div.subheads-list").append('<div class="container  mt-1"><h4 class="subheadingtxt">' + sub_heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h4><form></form>')
+        $("section:nth-child(" + heading_in_sub_heading + ") div.subheads-list").append('<div class="container ui-sortable ui-sortable-handle"><h4 class="subheadingtxt">' + sub_heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h4><form class="ui-sortable"></form>')
         $('.select-form #sectionTagId option').remove()
         $('.select-form #sectionTagId').append("<option value='' selected disabled>Select Sub Heading</option>")
         $('section .container h4').each(function (key) {
@@ -162,7 +162,7 @@ $(document).ready(function () {
         var inputName = $('.names').val()
         var element = '<label >' + inputLabel + '</label > <input type="' + controlType + '"  label="' + inputLabel + '" class="' + inputClass + '" id="' + InputId + '" value="' + inputValue + '" name="' + inputName + '" placeholder="' + inputPlaceholder + '"  />'
         // $('main section:nth-child(' + frmheading + ') div:nth-child(' + frmsh + ')').append('<p>' + element + '<span class="" onclick="removed(this)"><img src="img/delete.png" class="img-fluid" alt="" width="10" height="10"></span></p>')
-        $('main section:nth-child(' + frmheading + ') div .container:nth-child(' + (frmsh - 1) + ') form').append('<div class="forminputs">' + element + '<span class="" onclick="removed(this)"><img src="img/delete.png" class="img-fluid" alt="" width="10" height="10"></span></div>')
+        $('main section:nth-child(' + frmheading + ') div .container:nth-child(' + (frmsh - 1) + ') form').append('<div class="forminputs ui-sortable ui-sortable-handle">' + element + '<span class="" onclick="removed(this)"><img src="img/delete.png" class="img-fluid" alt="" width="10" height="10"></span></div>')
         setLocalStorage();
         e.preventDefault();
         e.target.reset();
@@ -235,6 +235,49 @@ function getLocalStorage(property) {
 // local storage end here :-
 
 // dragdrop start here :-
+
+// $(document).ready(function (){
+//     $('main').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         items:'> section ',
+//     });
+
+//     $('section div:first-of-type').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: 'section > div',
+//         items:'div',
+//         dropOnEmpty: true,
+//         cancel: 'h1, button div .forminputs ',
+//     });
+
+//     $('.subheads-list').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         items:'> .container ',
+//     });
+
+//     $('.subheads-list .container form').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: 'section > div > div > form',
+//         items:'.forminputs ',
+//         dropOnEmpty: true,
+//     });
+
+//     $('.container').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: '.container',
+//         items:'.forminputs',
+//         dropOnEmpty: false,
+//         cancel: 'h1, button ',
+//     });
+
+//     setLocalStorage();
+// })
+    
 $(function () {
     $('main').sortable({
         change: function (event, ui) { setLocalStorage() },
@@ -273,8 +316,6 @@ $(function () {
         dropOnEmpty: false,
         cancel: 'h1, button ',
     });
-
-    
     setLocalStorage();
 })
 
