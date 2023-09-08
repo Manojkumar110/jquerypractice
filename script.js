@@ -69,7 +69,7 @@ $(document).ready(function () {
     $(".select-sub-heading").on('submit', function (e) {
         var heading_in_sub_heading = $('select option:selected', this).val()
         var sub_heading = $('input', this).val()
-        $("section:nth-child(" + heading_in_sub_heading + ") div.subheads-list").append('<div class="container ui-sortable ui-sortable-handle"><h4 class="subheadingtxt">' + sub_heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h4><form class="ui-sortable"></form>')
+        $("section:nth-child(" + heading_in_sub_heading + ") div.subheads-list").append('<div class="container mt-1 ui-sortable-handle ui-sortable"><h4 class="subheadingtxt">' + sub_heading + '<button class="remove btn btn-danger" onclick="removeFun(this)"><img src="img/delete.png" alt="" width="10" height="10"></button></h4><form class="ui-sortable"></form>')
         $('.select-form #sectionTagId option').remove()
         $('.select-form #sectionTagId').append("<option value='' selected disabled>Select Sub Heading</option>")
         $('section .container h4').each(function (key) {
