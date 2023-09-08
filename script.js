@@ -24,10 +24,13 @@ $(document).ready(function () {
             $('.select-form #headings').append("<option value=" + key + ">" + heading_in_sub_heading + "</option>")
             $('.select-sub-heading select').append("<option value=" + key + ">" + heading_in_sub_heading + "</option>")
         })
+        
+        setLocalStorage();
+        SortAbleFunction();
         e.preventDefault();
         e.target.reset();
-        setLocalStorage();
     })
+    SortAbleFunction();
 });
 
 $("#headingTextModel").click(function () {
@@ -65,7 +68,7 @@ $("#SubSeadingId").click(function () {
 });
 
 $(document).ready(function () {
-    getLocalStorage("Heading")
+    getLocalStorage("sub heading Heading")
     $(".select-sub-heading").on('submit', function (e) {
         var heading_in_sub_heading = $('select option:selected', this).val()
         var sub_heading = $('input', this).val()
@@ -75,11 +78,13 @@ $(document).ready(function () {
         $('section .container h4').each(function (key) {
             key = key + 1
             $(this).text()
+            setLocalStorage();
+            SortAbleFunction();
             e.preventDefault();
             e.target.reset();
-            setLocalStorage();
         })
     })
+    SortAbleFunction();
 });
 
 // sub heading end here :- 
@@ -121,6 +126,7 @@ $("#formModelId").click(function () {
         });
     })
     setLocalStorage();
+    SortAbleFunction();
 });
 
 $(document).ready(function () {
@@ -164,10 +170,12 @@ $(document).ready(function () {
         // $('main section:nth-child(' + frmheading + ') div:nth-child(' + frmsh + ')').append('<p>' + element + '<span class="" onclick="removed(this)"><img src="img/delete.png" class="img-fluid" alt="" width="10" height="10"></span></p>')
         $('main section:nth-child(' + frmheading + ') div .container:nth-child(' + (frmsh - 1) + ') form').append('<div class="forminputs ui-sortable ui-sortable-handle">' + element + '<span class="" onclick="removed(this)"><img src="img/delete.png" class="img-fluid" alt="" width="10" height="10"></span></div>')
         setLocalStorage();
+        SortAbleFunction();
         e.preventDefault();
         e.target.reset();
     })
     setLocalStorage();
+    SortAbleFunction();
 });
 
 // form section end here :- 
@@ -236,49 +244,7 @@ function getLocalStorage(property) {
 
 // dragdrop start here :-
 
-// $(document).ready(function (){
-//     $('main').sortable({
-//         change: function (event, ui) { setLocalStorage() },
-//         update: function (event, ui) { setLocalStorage() },
-//         items:'> section ',
-//     });
-
-//     $('section div:first-of-type').sortable({
-//         change: function (event, ui) { setLocalStorage() },
-//         update: function (event, ui) { setLocalStorage() },
-//         connectWith: 'section > div',
-//         items:'div',
-//         dropOnEmpty: true,
-//         cancel: 'h1, button div .forminputs ',
-//     });
-
-//     $('.subheads-list').sortable({
-//         change: function (event, ui) { setLocalStorage() },
-//         update: function (event, ui) { setLocalStorage() },
-//         items:'> .container ',
-//     });
-
-//     $('.subheads-list .container form').sortable({
-//         change: function (event, ui) { setLocalStorage() },
-//         update: function (event, ui) { setLocalStorage() },
-//         connectWith: 'section > div > div > form',
-//         items:'.forminputs ',
-//         dropOnEmpty: true,
-//     });
-
-//     $('.container').sortable({
-//         change: function (event, ui) { setLocalStorage() },
-//         update: function (event, ui) { setLocalStorage() },
-//         connectWith: '.container',
-//         items:'.forminputs',
-//         dropOnEmpty: false,
-//         cancel: 'h1, button ',
-//     });
-
-//     setLocalStorage();
-// })
-    
-$(function () {
+function SortAbleFunction(){
     $('main').sortable({
         change: function (event, ui) { setLocalStorage() },
         update: function (event, ui) { setLocalStorage() },
@@ -316,8 +282,51 @@ $(function () {
         dropOnEmpty: false,
         cancel: 'h1, button ',
     });
+
     setLocalStorage();
-})
+}
+// })
+    
+// $(function () {
+//     $('main').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         items:'> section ',
+//     });
+
+//     $('section div:first-of-type').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: 'section > div',
+//         items:'div',
+//         dropOnEmpty: true,
+//         cancel: 'h1, button div .forminputs ',
+//     });
+
+//     $('.subheads-list').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         items:'> .container ',
+//     });
+
+//     $('.subheads-list .container form').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: 'section > div > div > form',
+//         items:'.forminputs ',
+//         dropOnEmpty: true,
+//     });
+
+//     $('.container').sortable({
+//         change: function (event, ui) { setLocalStorage() },
+//         update: function (event, ui) { setLocalStorage() },
+//         connectWith: '.container',
+//         items:'.forminputs',
+//         dropOnEmpty: false,
+//         cancel: 'h1, button ',
+//     });
+//     setLocalStorage();
+// })
 
 
 // drag and drop end here:-
